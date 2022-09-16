@@ -19,7 +19,7 @@ namespace Planning.Services
             listCardsToDo.Remove(card);
             var frame = new Frame();    
             frame.ListToDo = listCardsToDo;
-            var listCardsInProgress = listInProgress.ToList();
+            var listCardsInProgress = listInProgress == null ? new List<Card>() : listInProgress.ToList();
             listCardsInProgress.Add(card);
             frame.ListInProgress = listCardsInProgress;
             return frame;
